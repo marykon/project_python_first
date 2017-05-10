@@ -1,0 +1,115 @@
+'''1) ВАСЯ -> VASYA - сделать транслитер
+вася умница - vasya umnica
+ латинские оставляем как есть
+'''
+
+RUS_TO_ENG_WORD = {
+    "А": "A",
+    "Б": "B",
+    "В": "V",
+    "Г": "G",
+    "Д": "D",
+    "Е": "E",
+    "Ё": "E",
+    "Ж": "ZH",
+    "З": "Z",
+    "И": "I",
+    "Й": "Y",
+    "К": "K",
+    "Л" : "L",
+    "М" : "M",
+    "Н" : "N",
+    "О" : "O",
+    "П" : "P",
+    "Р" : "R",
+    "С" : "S",
+    "Т" : "T",
+    "У" : "U",
+    "Ф" : "F",
+    "Х" : "KH",
+    "Ц" : "TS",
+    "Ч" : "CH",
+    "Ш" : "SH",
+    "Щ" : "SHCH",
+    "Э" : "E",
+    "Ю" : "YU",
+    "Я" : "YA",
+    "а": "a",
+    "б": "b",
+    "в": "v",
+    "г": "g",
+    "д": "d",
+    "е": "e",
+    "ё": "e",
+    "ж": "zh",
+    "з": "z",
+    "и": "i",
+    "й": "y",
+    "к": "k",
+    "л" : "l",
+    "м" : "m",
+    "н" : "n",
+    "о" : "o",
+    "п" : "p",
+    "р" : "r",
+    "с" : "s",
+    "т" : "t",
+    "у" : "u",
+    "ф" : "f",
+    "х" : "kh",
+    "ц" : "ts",
+    "ч" : "ch",
+    "ш" : "sh",
+    "щ" : "shch",
+    "э" : "e",
+    "ю" : "yu",
+    "я" : "ya"
+}
+
+def WORDOFICATOR(string):
+    string2 = []
+    for letter in string:
+        if letter in RUS_TO_ENG_WORD:
+            string2.append(RUS_TO_ENG_WORD[letter])
+        else:
+            string2.append(letter)
+            
+    result = "".join(string2)          
+    return result
+
+
+''' 2) есть массив целых чисел
+    [1,2,3,4,5,6,7,7]
+    counter -  которая посчитает и вернет словарь  - в котором написано сколько раз такой элемент встречался
+    1:1
+    2:1
+    ...
+    7:2
+'''
+
+
+def CALCULATION(array):
+    
+    counter ={}
+    for item in array:
+           counter[item] = counter.get(item, 0) + 1
+    print(counter)
+
+ ''' второй вариант'''
+
+def CALCULATION_2(array):
+    
+    counter ={}
+    for item in array:
+        if item in counter:
+            counter[item]=+1
+        else:
+            counter[item]=1
+    print(counter)
+
+''' Проверка'''
+from collections import Counter
+
+def counter1(integer):
+    counts = Counter(integer)
+    print(counts)

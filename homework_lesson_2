@@ -1,0 +1,30 @@
+#1) range - вывести эелементы вида 3, 7, 11, ...23 - с шагом 4
+list=range(3,27,4)
+for i in list:
+    print(i)
+
+'''2) min/max
+написать программу найти макс и мин элемент в массивее - сделать через цикл
+a=[1,7,13,-2,7 ....] #len (a)==10'''
+
+a=[1,7,13,-2,7,-8,10,4,9,0]
+min_a=a[0]
+max_a=a[0]
+for i in range(len(a)-1):
+    if  a[i]<min_a:
+        min_a=a[i]
+    elif a[i]>max_a:
+        max_a=a[i]
+
+print('min_a=',min_a)
+print('max_a=',max_a)
+
+
+print('проверка мин',min(a), 'проверка макс ',max(a))
+
+#3) вывести первые 10 чисел Фибоначчи
+
+fib=[0,1]
+for i in range(8):
+    fib.append(fib[i]+fib[i+1])
+print(fib)
